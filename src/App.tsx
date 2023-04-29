@@ -1,7 +1,11 @@
 // import { useState } from 'react'
+import "./App.css";
 
 
 import './App.css'
+import CardImage from "./components/CardImage";
+import DetailsSection from "./components/DetailsSection";
+import NavBar from "./components/NavBar";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -9,7 +13,9 @@ function App() {
 
   return (
     <main>
-      <h1>hello world</h1>
+      <NavBar />
+      <CardImage />
+      <DetailsSection />
     </main>
   )
 }

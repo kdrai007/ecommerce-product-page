@@ -1,0 +1,41 @@
+body {
+  font-family: "Manrope", sans-serif;
+}
+.large {
+  font-size: 20rem;
+}
+.image {
+  transition: all 1s ease-in-out 0s;
+}
+
+.image:hover {
+  cursor: pointer;
+  transform: rotate(360deg);
+  /* transition: all 1s ease-in-out 0s; */
+}
+.next {
+  top: 208px;
+  right: 13px;
+  padding: 12px 15px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.prev {
+  top: 216px;
+  left: 13px;
+  padding: 12px 15px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.counter {
+  background-color: #f7f8fd;
+}
+svg {
+  fill: #fff !important;
+}
