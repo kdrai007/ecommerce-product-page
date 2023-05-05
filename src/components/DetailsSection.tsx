@@ -12,7 +12,7 @@ const DetailsSection = () => {
             <div className="price flex items-center justify-between">
                 <div className="discount flex items-center justify-evenly gap-x-4">
                     <h1 className='text-3xl font-bold'>$125.00</h1>
-                    <button className='bg-PaleOrange px-2 py-1 rounded-sm text-Orange'>50%</button>
+                    <button className='bg-PaleOrange px-3 py-1 rounded-lg text-Orange font-bold'>50%</button>
                 </div>
                 <del className='text-pGray text-xl'>$250.00</del>
             </div>
