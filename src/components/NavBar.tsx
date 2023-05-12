@@ -1,26 +1,33 @@
 import { useState } from "react";
+import { useGlobalContext } from "../context/productcontext";
 import Cart from "./Cart";
+import Menu from "./Menu";
 // import { ReactComponent as cartIcon } from "../assets/icon-cart-2.svg";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 
 const NavBar = () => {
-  const [menu, setMenu] = useState(true);
+  const { menu, setMenu } = useGlobalContext();
   const [cart, setCart] = useState(false);
   function handleMenu() {
+    if (cart) setCart(false);
     setMenu(!menu);
 
   }
   function handleCart() {
     setCart(!cart);
+    if (menu === false) {
+      setMenu(true);
+    }
   }
   return (
     <div className="flex flex-row justify-between p-4">
       <div className="flex flex-row items-center  gap-x-5 relative">
-        <img className={`h-[18px] w-[22px] cursor-pointer ${menu ? "" : "image"}`} src={`./images/icon-${menu ? "menu" : "close"}.svg`} alt="menu icon" onClick={handleMenu} />
+        <img className={`h-[18px] w-[22px] cursor-pointer ${menu ? "" : "image"} z-10`} src={`./images/icon-${menu ? "menu" : "close"}.svg`} alt="menu icon" onClick={handleMenu} />
         <h3 className="text-3xl font-bold tracking-tighter">sneakers</h3>
       </div>
+      {!menu && <Menu />}
       {cart && <Cart />}
       <div className="flex flex-row items-center gap-x-5">
         {/* <img className="h-[20px] w-[20px]" src={cartIcon} alt="menu icon" /> */}

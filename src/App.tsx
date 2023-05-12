@@ -1,22 +1,26 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import "./App.css";
+
 
 
 import './App.css'
 import CardImage from "./components/CardImage";
 import DetailsSection from "./components/DetailsSection";
 import NavBar from "./components/NavBar";
+import { MyGlobalContext } from "./context/productcontext";
 
 function App() {
-  // const [count, setCount] = useState(0)
-
+  const [copy, setCopy] = useState<string>("hello there");
+  const [menu, setMenu] = useState(true);
 
   return (
-    <main>
-      <NavBar />
-      <CardImage />
-      <DetailsSection />
-    </main>
+    <MyGlobalContext.Provider value={{ copy, setCopy, menu, setMenu }} >
+      <main style={{ backgroundColor: `${!menu ? "#404040" : ""}` }}>
+        <NavBar />
+        <CardImage />
+        <DetailsSection />
+      </main>
+    </MyGlobalContext.Provider>
   )
 }
 

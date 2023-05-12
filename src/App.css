@@ -45,9 +45,23 @@ h1 {
 }
 .absolute-add {
   top: 86px;
+  left: 10px;
+}
+.nav__menu {
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 1;
+  padding: 5rem 4rem 0 2rem;
+}
+.nav__menu > ul > li {
+  cursor: pointer;
+  margin-bottom: 0.8rem;
+  font-size: large;
+  font-weight: bold;
 }
 @media screen and (max-width: 600px) {
   .absolute-add {
-    width: 32rem;
+    width: 96%;
   }
 }
