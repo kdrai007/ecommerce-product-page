@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+
 import CartItem from './CartItem'
 const DetailsSection = () => {
-    const [cartItem, setCartItem] = useState([]);
     return (
         <div className="p-6 display flex flex-col gap-4">
             <strong className='text-Orange tracking-wider '>SNEAKER COMPANY</strong>

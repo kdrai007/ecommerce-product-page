@@ -11,10 +11,11 @@ import { MyGlobalContext } from "./context/productcontext";
 
 function App() {
   const [copy, setCopy] = useState<string>("hello there");
+  const [cartItem, setCartItem] = useState<number>(0);
   const [menu, setMenu] = useState(true);
 
   return (
-    <MyGlobalContext.Provider value={{ copy, setCopy, menu, setMenu }} >
+    <MyGlobalContext.Provider value={{ copy, setCopy, menu, setMenu, cartItem, setCartItem }} >
       <main style={{ backgroundColor: `${!menu ? "#404040" : ""}` }}>
         <NavBar />
         <CardImage />

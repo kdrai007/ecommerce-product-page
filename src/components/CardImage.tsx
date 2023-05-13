@@ -1,6 +1,7 @@
 import { useState } from "react";
-
+import { useGlobalContext } from "../context/productcontext";
 const CardImage = () => {
+    const { menu } = useGlobalContext();
     const Images = {
         thumnail: [
             "./images/image-product-1-thumbnail.jpg",
@@ -36,7 +37,7 @@ const CardImage = () => {
 
     return (
         <div className="w-full relative">
-            <img src={Images.images[selectedImg]} alt="" />
+            <img style={{ opacity: `${!menu ? "0.5" : ""}` }} src={Images.images[selectedImg]} alt="" />
             <button
                 className="absolute next"
                 onClick={() => handleImage("increment")}
