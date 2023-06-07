@@ -23,7 +23,7 @@ const NavBar = () => {
   }
   return (
     <nav>
-      <div className="flex flex-row justify-between p-4 md:px-[100px]  relative ">
+      <div className="flex flex-row justify-between p-4 md:px-[100px] xl:px-[150px]  relative ">
         <div className="flex flex-row items-center  gap-x-5 relative">
           <img className={`h-[18px] w-[22px] cursor-pointer ${menu ? "" : "image "} z-10 md:hidden `} src={`./images/icon-${menu ? "menu" : "close"}.svg`} alt="menu icon" onClick={handleMenu} />
           <h3 className="text-3xl font-bold tracking-tighter cursor-pointer">sneakers</h3>
@@ -44,7 +44,7 @@ const NavBar = () => {
           <img className="h-[28px] w-[28px]" src="./images/image-avatar.png" alt="menu icon" />
         </div>
       </div>
-      <hr className='opacity-30' />
+      <hr className='opacity-30 md:mx-[100px] xl:mx-[150px]' />
     </nav>
   )
 }

@@ -2,7 +2,7 @@
 import CartItem from './CartItem'
 const DetailsSection = () => {
     return (
-        <div className="p-6 flex flex-col gap-4 basis-[50%]">
+        <div className="p-6 flex flex-col gap-4 basis-[50%] xl:basis-[40%] xl:gap-8">
             <strong className='text-Orange tracking-wider '>SNEAKER COMPANY</strong>
             <div className="details flex flex-col gap-y-4">
                 <h1 className='text-3xl font-bold leading-tight'>Fall Limited Edition Sneakers</h1>

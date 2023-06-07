@@ -1,7 +1,13 @@
 import { useGlobalContext } from "../context/productcontext";
+import { useState, useEffect } from 'react';
 const Cart = () => {
   const { cartItem, setCartItem } = useGlobalContext();
-  return <div className="absolute absolute-add bg-White text-left z-10 rounded-lg">
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    console.log(screenWidth)
+    setScreenWidth(window.innerWidth);
+  }, [screenWidth])
+  return <div className={`absolute md:top-[85px] md:right-[200px] md:w-[500px] md:shadow-lg ${screenWidth < 760 && 'absolute-add'}  bg-White text-left z-10 rounded-lg`}>
     <div className=" p-5">
       <h3 className="font-semibold text-lg">Cart</h3></div>
     <hr />

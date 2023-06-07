@@ -41,9 +41,9 @@ const CardImage = () => {
     }
 
     return (
-        <div className="relative basis-[50%]">
+        <div className="relative basis-[50%] xl:basis-[40%]">
             <div>
-                <img className='rounded-lg md:w-[450px] md:h-[320px] object-cover' style={{ opacity: `${!menu ? "0.5" : ""}` }} src={Images.images[selectedImg]} alt="" />
+                <img className='rounded-lg lg:w-[450px] lg:h-[320px] xl:w-[600px] xl:h-[400px] object-cover' style={{ opacity: `${!menu ? "0.5" : ""}` }} src={Images.images[selectedImg]} alt="" />
                 <button
                     className="absolute next md:hidden"
                     onClick={() => handleImage("increment")}

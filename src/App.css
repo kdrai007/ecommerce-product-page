@@ -81,14 +81,15 @@ li:hover {
 .setLine::after {
   display: block;
   content: '';
-  background: red;
+  background: hsl(26, 100%, 55%);
   position: absolute;
   top: 50px;
   width: 0;
   height: 2px;
+  z-index: 1;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 767px) {
   .absolute-add {
     width: 96%;
   }
