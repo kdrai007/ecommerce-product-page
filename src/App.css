@@ -1,5 +1,5 @@
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 .large {
   font-size: 20rem;
@@ -14,7 +14,7 @@ body {
   /* transition: all 1s ease-in-out 0s; */
 }
 .next {
-  top: 208px;
+  top: 220px;
   right: 13px;
   padding: 12px 15px;
   background-color: white;
@@ -33,9 +33,7 @@ body {
   justify-content: center;
   border-radius: 50%;
 }
-.counter {
-  background-color: #f7f8fd;
-}
+
 h1 {
   color: #000000c2;
 }
@@ -60,6 +58,36 @@ h1 {
   font-size: large;
   font-weight: bold;
 }
+li {
+  cursor: pointer;
+}
+li:hover {
+  color: black;
+}
+.blocker::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  background-color: gray;
+  opacity: 0.3;
+  height: 1px;
+  width: 85%;
+  margin-right: 100px;
+}
+.setLine {
+  position: relative;
+}
+.setLine::after {
+  display: block;
+  content: '';
+  background: red;
+  position: absolute;
+  top: 50px;
+  width: 0;
+  height: 2px;
+}
+
 @media screen and (max-width: 640px) {
   .absolute-add {
     width: 96%;

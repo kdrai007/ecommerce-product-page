@@ -18,6 +18,7 @@ const CardImage = () => {
     };
 
     const [selectedImg, setSelectedImg] = useState(0);
+    const [activeImg, setActiveImg] = useState(0);
 
     function handleImage(str: string) {
         if (str === "increment") {
@@ -34,22 +35,33 @@ const CardImage = () => {
             }
         }
     }
+    function handleActive(index: number) {
+        setActiveImg(index);
+        setSelectedImg(index);
+    }
 
     return (
-        <div className="w-full relative">
-            <img style={{ opacity: `${!menu ? "0.5" : ""}` }} src={Images.images[selectedImg]} alt="" />
-            <button
-                className="absolute next"
-                onClick={() => handleImage("increment")}
-            >
-                <img src="./images/icon-next.svg" alt="" />
-            </button>
-            <button
-                className="absolute prev"
-                onClick={() => handleImage("decrement")}
-            >
-                <img src="./images/icon-previous.svg" alt="" />
-            </button>
+        <div className="relative basis-[50%]">
+            <div>
+                <img className='rounded-lg md:w-[450px] md:h-[320px] object-cover' style={{ opacity: `${!menu ? "0.5" : ""}` }} src={Images.images[selectedImg]} alt="" />
+                <button
+                    className="absolute next md:hidden"
+                    onClick={() => handleImage("increment")}
+                >
+                    <img src="./images/icon-next.svg" alt="" />
+                </button>
+                <button
+                    className="absolute prev  md:hidden"
+                    onClick={() => handleImage("decrement")}
+                >
+                    <img src="./images/icon-previous.svg" alt="" />
+                </button>
+            </div>
+            <div className='flex flex-row gap-4 mt-8'>
+                {Images.images.map((item, index) => (
+                    <img className={`w-[100px] h-[100px] rounded-lg  object-contain cursor-pointer hover:opacity-30 transition-opacity ease-in-out duration-200 hidden md:block ${index === activeImg && 'border-[3px] border-Orange opacity-30'}`} onClick={() => handleActive(index)} src={item} alt="item image" key={index} />
+                ))}
+            </div>
         </div>
     );
 };

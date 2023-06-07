@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { createContext, useContext } from "react";
+import { createContext, useContext } from 'react';
 export type GlobalContent = {
   copy: string;
   setCopy: (c: string) => void;
@@ -9,7 +9,7 @@ export type GlobalContent = {
   setCartItem: (c: number) => void;
 };
 export const MyGlobalContext = createContext<GlobalContent>({
-  copy: "Hello World", // set a default value
+  copy: 'Hello World', // set a default value
   setCopy: () => {},
   menu: false,
   setMenu: () => {},

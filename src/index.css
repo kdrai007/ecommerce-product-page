@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .addedClass {
+    @apply hover:after:transition-all hover:after:duration-150 hover:after:ease-in-out;
+  }
+}

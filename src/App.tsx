@@ -14,12 +14,15 @@ function App() {
   const [cartItem, setCartItem] = useState<number>(0);
   const [menu, setMenu] = useState(true);
 
+
   return (
     <MyGlobalContext.Provider value={{ copy, setCopy, menu, setMenu, cartItem, setCartItem }} >
-      <main style={{ backgroundColor: `${!menu ? "#404040" : ""}` }}>
+      <main className={`${!menu && 'bg-[#404040] z-0'}`}>
         <NavBar />
-        <CardImage />
-        <DetailsSection />
+        <div className='flex flex-col md:mt-[80px]   md:justify-center md:flex-row md:px-[100px] md:h-screen md:gap-10 overflow-hidden'>
+          <CardImage />
+          <DetailsSection />
+        </div>
       </main>
     </MyGlobalContext.Provider>
   )
